@@ -15,6 +15,7 @@ For this segment we are using Type ORM to create an orm mapping between DB and o
 
 Initialize type ORM
 1. npm install @nestjs/typeorm typeorm pg
+2. TypeOrmModule.forRoot({}) use this in app,module.ts
 
 
 

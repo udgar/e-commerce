@@ -1,4 +1,11 @@
-import { Entity } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity("products_info")
-export class Product {}
+export class Product {
+
+    @PrimaryGeneratedColumn()
+    id:number
+
+    @Column()
+    productName:string
+}
