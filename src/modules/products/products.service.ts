@@ -10,22 +10,22 @@ export class ProductsService {
 
   constructor(@InjectRepository(Product)private repository:Repository<Product>){}
   create(createProductDto: CreateProductDto) {
-    return 'This action adds a new product';
+    return this.repository.insert(createProductDto);
   }
 
   findAll() {
-    return `This action returns all products`;
+    return this.repository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} product`;
+  findOne(id: string) {
+    return this.repository.findBy({id});
   }
 
-  update(id: number, updateProductDto: UpdateProductDto) {
-    return `This action updates a #${id} product`;
+  update(id: string, updateProductDto: UpdateProductDto) {
+    return this.repository.update(id,updateProductDto);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} product`;
+  remove(id: string) {
+    return this.repository.delete({id});
   }
 }

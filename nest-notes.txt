@@ -16,6 +16,9 @@ For this segment we are using Type ORM to create an orm mapping between DB and o
 Initialize type ORM
 1. npm install @nestjs/typeorm typeorm pg
 2. TypeOrmModule.forRoot({}) use this in app,module.ts
+3. Include Repository Pattern @Entity(), @Column(), @PrimarilyGeneratedId()
+4. Then do the constructor injection with @InjectRepository(ENTITY)
+5. Add in the imports on module imports: [TypeOrmModule.forFeature([ENTITY])]
 
 
 

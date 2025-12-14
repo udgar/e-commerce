@@ -12,14 +12,13 @@ const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const products_module_1 = require("./modules/products/products.module");
 const customers_module_1 = require("./modules/customers/customers.module");
-const database_module_1 = require("./database/database.module");
 const typeorm_1 = require("@nestjs/typeorm");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [products_module_1.ProductsModule, customers_module_1.CustomersModule, database_module_1.DatabaseModule,
+        imports: [products_module_1.ProductsModule, customers_module_1.CustomersModule,
             typeorm_1.TypeOrmModule.forRoot({
                 type: 'postgres',
                 host: 'localhost',
@@ -29,6 +28,7 @@ exports.AppModule = AppModule = __decorate([
                 database: 'postgres',
                 entities: [],
                 synchronize: true,
+                autoLoadEntities: true
             })
         ],
         controllers: [app_controller_1.AppController],

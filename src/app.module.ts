@@ -3,11 +3,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ProductsModule } from './modules/products/products.module';
 import { CustomersModule } from './modules/customers/customers.module';
-import { DatabaseModule } from './database/database.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
-  imports: [ProductsModule, CustomersModule, DatabaseModule,
+  imports: [ProductsModule, CustomersModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',
@@ -17,6 +16,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       database: 'postgres',
       entities: [],
       synchronize: true,
+      autoLoadEntities: true
     })
   ],
   controllers: [AppController],

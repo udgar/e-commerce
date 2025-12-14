@@ -23,19 +23,19 @@ let ProductsService = class ProductsService {
         this.repository = repository;
     }
     create(createProductDto) {
-        return 'This action adds a new product';
+        return this.repository.insert(createProductDto);
     }
     findAll() {
-        return `This action returns all products`;
+        return this.repository.find();
     }
     findOne(id) {
-        return `This action returns a #${id} product`;
+        return this.repository.findBy({ id });
     }
     update(id, updateProductDto) {
-        return `This action updates a #${id} product`;
+        return this.repository.update(id, updateProductDto);
     }
     remove(id) {
-        return `This action removes a #${id} product`;
+        return this.repository.delete({ id });
     }
 };
 exports.ProductsService = ProductsService;

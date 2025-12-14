@@ -5,9 +5,9 @@ import { Repository } from 'typeorm';
 export declare class ProductsService {
     private repository;
     constructor(repository: Repository<Product>);
-    create(createProductDto: CreateProductDto): string;
-    findAll(): string;
-    findOne(id: number): string;
-    update(id: number, updateProductDto: UpdateProductDto): string;
-    remove(id: number): string;
+    create(createProductDto: CreateProductDto): Promise<import("typeorm").InsertResult>;
+    findAll(): Promise<Product[]>;
+    findOne(id: string): Promise<Product[]>;
+    update(id: string, updateProductDto: UpdateProductDto): Promise<import("typeorm").UpdateResult>;
+    remove(id: string): Promise<import("typeorm").DeleteResult>;
 }

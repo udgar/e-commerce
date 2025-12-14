@@ -1,4 +1,4 @@
 export declare class Customer {
-    id: number;
+    id: string;
     name: string;
 }
