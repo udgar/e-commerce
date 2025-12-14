@@ -1,0 +1,25 @@
+Project Initialization:
+
+1. nest new project_init
+
+Module Initialization:
+
+1.nest g module module_name
+2. nest g service service_name
+3. nest g controller controller_name
+4. nest g resources module_name(create everything from module to service to controller)
+
+Database Connectivity:
+
+For this segment we are using Type ORM to create an orm mapping between DB and our application:
+
+Initialize type ORM
+1. npm install @nestjs/typeorm typeorm pg
+2. TypeOrmModule.forRoot({}) use this in app,module.ts
+3. Include Repository Pattern @Entity(), @Column(), @PrimarilyGeneratedId()
+4. Then do the constructor injection with @InjectRepository(ENTITY)
+5. Add in the imports on module imports: [TypeOrmModule.forFeature([ENTITY])]
+
+
+
+
