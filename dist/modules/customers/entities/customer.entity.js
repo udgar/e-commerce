@@ -12,16 +12,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Customer = void 0;
 const typeorm_1 = require("typeorm");
 let Customer = class Customer {
-    id;
-    name;
 };
 exports.Customer = Customer;
 __decorate([
-    (0, typeorm_1.PrimaryGeneratedColumn)('uuid'),
-    __metadata("design:type", String)
+    (0, typeorm_1.PrimaryGeneratedColumn)(),
+    __metadata("design:type", Number)
 ], Customer.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)('uuid'),
+    __metadata("design:type", String)
+], Customer.prototype, "uuid", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ name: 'name' }),
     __metadata("design:type", String)
 ], Customer.prototype, "name", void 0);
 exports.Customer = Customer = __decorate([

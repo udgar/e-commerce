@@ -18,7 +18,6 @@ const customers_service_1 = require("./customers.service");
 const create_customer_dto_1 = require("./dto/create-customer.dto");
 const update_customer_dto_1 = require("./dto/update-customer.dto");
 let CustomersController = class CustomersController {
-    customersService;
     constructor(customersService) {
         this.customersService = customersService;
     }

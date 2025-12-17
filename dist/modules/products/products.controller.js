@@ -18,7 +18,6 @@ const products_service_1 = require("./products.service");
 const create_product_dto_1 = require("./dto/create-product.dto");
 const update_product_dto_1 = require("./dto/update-product.dto");
 let ProductsController = class ProductsController {
-    productsService;
     constructor(productsService) {
         this.productsService = productsService;
     }

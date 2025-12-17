@@ -18,7 +18,7 @@ export class ProductsService {
   }
 
   findOne(id: string) {
-    return this.repository.findBy({id});
+    return this.repository.findBy({id:parseInt(id)});
   }
 
   update(id: string, updateProductDto: UpdateProductDto) {
@@ -26,6 +26,6 @@ export class ProductsService {
   }
 
   remove(id: string) {
-    return this.repository.delete({id});
+    return this.repository.delete({id:parseInt(id)});
   }
 }

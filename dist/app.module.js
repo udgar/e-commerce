@@ -13,23 +13,16 @@ const app_service_1 = require("./app.service");
 const products_module_1 = require("./modules/products/products.module");
 const customers_module_1 = require("./modules/customers/customers.module");
 const typeorm_1 = require("@nestjs/typeorm");
+const data_source_1 = require("./modules/database/data-source");
+const config_1 = require("@nestjs/config");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
         imports: [products_module_1.ProductsModule, customers_module_1.CustomersModule,
-            typeorm_1.TypeOrmModule.forRoot({
-                type: 'postgres',
-                host: 'localhost',
-                port: 5432,
-                username: 'postgres',
-                password: 'postgres',
-                database: 'postgres',
-                entities: [],
-                synchronize: true,
-                autoLoadEntities: true
-            })
+            config_1.ConfigModule.forRoot(),
+            typeorm_1.TypeOrmModule.forRoot(data_source_1.AppDataSource.options)
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

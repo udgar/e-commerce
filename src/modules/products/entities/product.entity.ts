@@ -3,9 +3,12 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 @Entity("products_info")
 export class Product {
 
-    @PrimaryGeneratedColumn('uuid')
-    id:string
+    @PrimaryGeneratedColumn()
+    id:number
 
-    @Column()
+    @Column('uuid')
+    uuid:string
+
+    @Column({name: 'product_name'})
     productName:string
 }

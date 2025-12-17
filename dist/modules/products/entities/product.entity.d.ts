@@ -1,4 +1,5 @@
 export declare class Product {
-    id: string;
+    id: number;
+    uuid: string;
     productName: string;
 }

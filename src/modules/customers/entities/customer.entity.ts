@@ -4,9 +4,12 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 export class Customer {
 
 
-    @PrimaryGeneratedColumn('uuid')
-    id: string
+    @PrimaryGeneratedColumn()
+    id: number
 
-    @Column()
+    @Column('uuid')
+    uuid:string
+
+    @Column({name: 'name'})
     name:string
 }

@@ -18,7 +18,6 @@ const typeorm_1 = require("@nestjs/typeorm");
 const product_entity_1 = require("./entities/product.entity");
 const typeorm_2 = require("typeorm");
 let ProductsService = class ProductsService {
-    repository;
     constructor(repository) {
         this.repository = repository;
     }
@@ -29,13 +28,13 @@ let ProductsService = class ProductsService {
         return this.repository.find();
     }
     findOne(id) {
-        return this.repository.findBy({ id });
+        return this.repository.findBy({ id: parseInt(id) });
     }
     update(id, updateProductDto) {
         return this.repository.update(id, updateProductDto);
     }
     remove(id) {
-        return this.repository.delete({ id });
+        return this.repository.delete({ id: parseInt(id) });
     }
 };
 exports.ProductsService = ProductsService;
