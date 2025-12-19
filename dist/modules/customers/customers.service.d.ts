@@ -1,7 +1,7 @@
-import { CreateCustomerDto } from './dto/create-customer.dto';
-import { UpdateCustomerDto } from './dto/update-customer.dto';
+import { CreateCustomerDto } from './dto/create-customer.dto.js';
+import { UpdateCustomerDto } from './dto/update-customer.dto.js';
 import { Repository } from 'typeorm';
-import { Customer } from './entities/customer.entity';
+import { Customer } from './entities/customer.entity.js';
 export declare class CustomersService {
     constructor(repository: Repository<Customer>);
     create(createCustomerDto: CreateCustomerDto): string;

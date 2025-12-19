@@ -1,7 +1,7 @@
-import { CreateProductDto } from './dto/create-product.dto';
-import { UpdateProductDto } from './dto/update-product.dto';
-import { Product } from './entities/product.entity';
 import { Repository } from 'typeorm';
+import { Product } from './entities/product.entity.js';
+import { CreateProductDto } from './dto/create-product.dto.js';
+import { UpdateProductDto } from './dto/update-product.dto.js';
 export declare class ProductsService {
     private repository;
     constructor(repository: Repository<Product>);

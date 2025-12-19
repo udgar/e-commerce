@@ -7,9 +7,16 @@ export class Customer {
     @PrimaryGeneratedColumn()
     id: number
 
-    @Column('uuid')
-    uuid:string
-
     @Column({name: 'name'})
     name:string
+
+    @Column({name: 'user_id'})
+    @Column('uuid')
+    userId:string
+
+    @Column({name: 'email'})
+    email:string
+
+    @Column({name:'phone_number'})
+    phoneNumber:string
 }

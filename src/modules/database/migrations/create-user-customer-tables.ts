@@ -3,23 +3,25 @@ import { MigrationInterface, QueryRunner } from "typeorm";
 export class CreateRequiredTables1765889914245 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
-        // Create User and Product Table
         await queryRunner.query(
             `CREATE TABLE customer_data (
             id BIGSERIAL PRIMARY KEY,
-            uuid UUID NOT NULL DEFAULT gen_random_uuid(),
-            name VARCHAR(255) NOT NULL);`
+            name VARCHAR(255) NOT NULL,
+            user_id VARCHAR(225) NOT NULL DEFAULT gen_random_uuid(),
+            email VARCHAR(225) NOT NULL,
+            phone_number VARCHAR(225) NOT NULL);`
         ),
         await queryRunner.query(
             `CREATE TABLE products_info (
             id BIGSERIAL PRIMARY KEY,
-            uuid UUID NOT NULL DEFAULT gen_random_uuid(),
-            product_name VARCHAR(255) NOT NULL);`
+            product_id VARCHAR(225) NOT NULL DEFAULT gen_random_uuid(),
+            product_name VARCHAR(255) NOT NULL,
+            price DECIMAL NOT NULL,
+            category VARCHAR(225) NOT NULL);`
         )
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        // Remove user and product table 
         await queryRunner.query(
             `DROP TABLE customer_data`
         ),

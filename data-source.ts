@@ -1,6 +1,7 @@
 import { DataSource } from 'typeorm';
 import 'dotenv/config';
 
+
 export const AppDataSource = new DataSource({
     type: 'postgres',
     host: 'localhost',
@@ -8,8 +9,10 @@ export const AppDataSource = new DataSource({
     username: 'postgres',
     password: 'postgres',
     database: 'postgres',
-    entities: [__dirname+'/../*/entities/*.entity{.ts,.js}'],
-    migrations: [__dirname+'/../migrations/*{.ts,.js}'],
+    entities: ['src/modules/products/entities/*.entity{.ts,.js}'
+        ,'src/modules/customers/entities/*.entity{.ts,.js}'
+        ,'src/modules/orders/entities/*.entity{.ts,.js}'],
+    migrations: ['src/modules/database/migrations/*{.ts,.js}'],
     synchronize: false,
     migrationsRun: false,
     migrationsTableName: 'migrations',

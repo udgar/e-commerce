@@ -1,9 +1,10 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppDataSource = void 0;
-const typeorm_1 = require("typeorm");
-require("dotenv/config");
-exports.AppDataSource = new typeorm_1.DataSource({
+import { DataSource } from 'typeorm';
+import 'dotenv/config';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+export const AppDataSource = new DataSource({
     type: 'postgres',
     host: 'localhost',
     port: 5432,
@@ -11,7 +12,7 @@ exports.AppDataSource = new typeorm_1.DataSource({
     password: 'postgres',
     database: 'postgres',
     entities: [__dirname + '/../*/entities/*.entity{.ts,.js}'],
-    migrations: [__dirname + '/migrations/*{.ts,.js}'],
+    migrations: [__dirname + '/../migrations/*{.ts,.js}'],
     synchronize: false,
     migrationsRun: false,
     migrationsTableName: 'migrations',

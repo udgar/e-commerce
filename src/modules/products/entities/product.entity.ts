@@ -6,9 +6,16 @@ export class Product {
     @PrimaryGeneratedColumn()
     id:number
 
+    @Column({name:'product_id'})
     @Column('uuid')
-    uuid:string
+    productId:string
 
     @Column({name: 'product_name'})
     productName:string
+
+    @Column({name:'price'})
+    price:number
+
+    @Column({name: 'category'})
+    category:string
 }
