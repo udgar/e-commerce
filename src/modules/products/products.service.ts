@@ -7,7 +7,7 @@ import { UpdateProductDto } from './dto/update-product.dto.js';
 
 @Injectable()
 export class ProductsService {
-
+  
   constructor(@InjectRepository(Product)private repository:Repository<Product>){}
   create(createProductDto: CreateProductDto) {
     return this.repository.insert(createProductDto);

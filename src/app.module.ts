@@ -6,9 +6,9 @@ import { CustomersModule } from './modules/customers/customers.module.js';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppDataSource } from '../data-source.js';
 import { ConfigModule } from '@nestjs/config';
-import { OrdersModule } from './modules/orders/orders.module';
-import { OrderServiceModule } from './services/order-service/order-service.module';
-import { PaymentServiceModule } from './services/payment-service/payment-service.module';
+import { OrdersModule } from './modules/orders/orders.module.js';
+import { OrderServiceModule } from './services/order-service/order-service.module.js';
+import { PaymentServiceModule } from './services/payment-service/payment-service.module.js';
 
 @Module({
   imports: [ProductsModule, CustomersModule,
