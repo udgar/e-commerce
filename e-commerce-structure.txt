@@ -111,7 +111,7 @@ src/
 
 2. PostgreSQL
 
-3. Prisma or TypeORM
+3. TypeORM
 
 4. Redis (cache + queues)
 

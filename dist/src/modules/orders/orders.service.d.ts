@@ -1,9 +1,15 @@
-import { CreateOrderDto } from './dto/create-order.dto.js';
-import { UpdateOrderDto } from './dto/update-order.dto.js';
+import { CreateOrderDto } from './dto/create-order.dto';
+import { UpdateOrderDto } from './dto/update-order.dto';
+import { Order } from './entities/order.entity.js';
+import { Repository } from 'typeorm';
+import { UpdateResult } from 'typeorm/browser';
+import { DeleteResult } from 'typeorm/browser';
 export declare class OrdersService {
-    create(createOrderDto: CreateOrderDto): string;
-    findAll(): string;
-    findOne(id: number): string;
-    update(id: number, updateOrderDto: UpdateOrderDto): string;
-    remove(id: number): string;
+    private readonly orderRepo;
+    constructor(orderRepo: Repository<Order>);
+    create(createOrderDto: CreateOrderDto): Promise<Order>;
+    findAll(): Promise<Order[]>;
+    findOne(id: number): Promise<Order | null>;
+    update(id: number, updateOrderDto: UpdateOrderDto): Promise<UpdateResult>;
+    remove(id: number): Promise<DeleteResult>;
 }

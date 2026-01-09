@@ -9,12 +9,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.OrdersModule = void 0;
 const common_1 = require("@nestjs/common");
 const orders_service_js_1 = require("./orders.service.js");
+const typeorm_1 = require("@nestjs/typeorm");
+const order_entity_js_1 = require("./entities/order.entity.js");
 let OrdersModule = class OrdersModule {
 };
 exports.OrdersModule = OrdersModule;
 exports.OrdersModule = OrdersModule = __decorate([
     (0, common_1.Module)({
         providers: [orders_service_js_1.OrdersService],
+        imports: [typeorm_1.TypeOrmModule.forFeature([order_entity_js_1.Order])]
     })
 ], OrdersModule);
 //# sourceMappingURL=orders.module.js.map

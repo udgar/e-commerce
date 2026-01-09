@@ -3,10 +3,11 @@ import { UpdateCustomerDto } from './dto/update-customer.dto.js';
 import { Repository } from 'typeorm';
 import { Customer } from './entities/customer.entity.js';
 export declare class CustomersService {
-    constructor(repository: Repository<Customer>);
-    create(createCustomerDto: CreateCustomerDto): string;
-    findAll(): string;
-    findOne(id: number): string;
-    update(id: number, updateCustomerDto: UpdateCustomerDto): string;
-    remove(id: number): string;
+    private readonly customerRepository;
+    constructor(customerRepository: Repository<Customer>);
+    create(createCustomerDto: CreateCustomerDto): Promise<Customer>;
+    findAll(): Promise<Customer[]>;
+    findOne(id: number): Promise<Customer | null>;
+    update(id: number, updateCustomerDto: UpdateCustomerDto): Promise<import("typeorm").UpdateResult>;
+    remove(id: number): Promise<import("typeorm").DeleteResult>;
 }

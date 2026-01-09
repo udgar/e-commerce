@@ -18,21 +18,30 @@ const typeorm_1 = require("typeorm");
 const customer_entity_js_1 = require("./entities/customer.entity.js");
 const typeorm_2 = require("@nestjs/typeorm");
 let CustomersService = class CustomersService {
-    constructor(repository) { }
-    create(createCustomerDto) {
-        return 'This action adds a new customer';
+    customerRepository;
+    constructor(customerRepository) {
+        this.customerRepository = customerRepository;
     }
-    findAll() {
-        return `This action returns all customers`;
+    async create(createCustomerDto) {
+        return this.customerRepository.create(createCustomerDto);
     }
-    findOne(id) {
-        return `This action returns a #${id} customer`;
+    async findAll() {
+        return this.customerRepository.find();
+    }
+    async findOne(id) {
+        return this.customerRepository.findOneBy({
+            id: id
+        });
     }
     update(id, updateCustomerDto) {
-        return `This action updates a #${id} customer`;
+        return this.customerRepository.update({
+            id: id
+        }, updateCustomerDto);
     }
     remove(id) {
-        return `This action removes a #${id} customer`;
+        return this.customerRepository.delete({
+            id: id
+        });
     }
 };
 exports.CustomersService = CustomersService;

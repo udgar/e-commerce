@@ -22,19 +22,19 @@ let ProductsService = class ProductsService {
     constructor(repository) {
         this.repository = repository;
     }
-    create(createProductDto) {
-        return this.repository.insert(createProductDto);
+    async create(createProductDto) {
+        return this.repository.create(createProductDto);
     }
-    findAll() {
+    async findAll() {
         return this.repository.find();
     }
-    findOne(id) {
-        return this.repository.findBy({ id: parseInt(id) });
+    async findOne(id) {
+        return this.repository.findOneBy({ id: parseInt(id) });
     }
-    update(id, updateProductDto) {
+    async update(id, updateProductDto) {
         return this.repository.update(id, updateProductDto);
     }
-    remove(id) {
+    async remove(id) {
         return this.repository.delete({ id: parseInt(id) });
     }
 };
