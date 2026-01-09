@@ -20,6 +20,11 @@ Initialize type ORM
 4. Then do the constructor injection with @InjectRepository(ENTITY)
 5. Add in the imports on module imports: [TypeOrmModule.forFeature([ENTITY])]
 
+Running the migrations:
+
+The Command is : npx typeorm migration:run -d ./src/modules/database/data-source.ts(data-source-path)
+
+
 
 
 

@@ -3,9 +3,19 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 @Entity("products_info")
 export class Product {
 
-    @PrimaryGeneratedColumn('uuid')
-    id:string
+    @PrimaryGeneratedColumn()
+    id:number
 
-    @Column()
+    @Column({name:'product_id'})
+    @Column('uuid')
+    productId:string
+
+    @Column({name: 'product_name'})
     productName:string
+
+    @Column({name:'price'})
+    price:number
+
+    @Column({name: 'category'})
+    category:string
 }
