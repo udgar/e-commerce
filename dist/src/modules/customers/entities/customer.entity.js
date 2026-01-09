@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7,7 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Customer = void 0;
+const typeorm_1 = require("typeorm");
 let Customer = class Customer {
     id;
     name;
@@ -15,29 +18,29 @@ let Customer = class Customer {
     email;
     phoneNumber;
 };
+exports.Customer = Customer;
 __decorate([
-    PrimaryGeneratedColumn(),
+    (0, typeorm_1.PrimaryGeneratedColumn)(),
     __metadata("design:type", Number)
 ], Customer.prototype, "id", void 0);
 __decorate([
-    Column({ name: 'name' }),
+    (0, typeorm_1.Column)({ name: 'name' }),
     __metadata("design:type", String)
 ], Customer.prototype, "name", void 0);
 __decorate([
-    Column({ name: 'user_id' }),
-    Column('uuid'),
+    (0, typeorm_1.Column)({ name: 'user_id' }),
+    (0, typeorm_1.Column)('uuid'),
     __metadata("design:type", String)
 ], Customer.prototype, "userId", void 0);
 __decorate([
-    Column({ name: 'email' }),
+    (0, typeorm_1.Column)({ name: 'email' }),
     __metadata("design:type", String)
 ], Customer.prototype, "email", void 0);
 __decorate([
-    Column({ name: 'phone_number' }),
+    (0, typeorm_1.Column)({ name: 'phone_number' }),
     __metadata("design:type", String)
 ], Customer.prototype, "phoneNumber", void 0);
-Customer = __decorate([
-    Entity("customer_data")
+exports.Customer = Customer = __decorate([
+    (0, typeorm_1.Entity)("customer_data")
 ], Customer);
-export { Customer };
 //# sourceMappingURL=customer.entity.js.map

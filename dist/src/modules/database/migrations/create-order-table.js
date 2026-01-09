@@ -1,4 +1,7 @@
-export class CreateOrderTable1765889914246 {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CreateOrderTable1765889914246 = void 0;
+class CreateOrderTable1765889914246 {
     async up(queryRunner) {
         await queryRunner.query(`CREATE TABLE orders_info (
             id BIGSERIAL PRIMARY KEY,
@@ -11,4 +14,5 @@ export class CreateOrderTable1765889914246 {
         await queryRunner.query(`DROP TABLE orders_info`);
     }
 }
+exports.CreateOrderTable1765889914246 = CreateOrderTable1765889914246;
 //# sourceMappingURL=create-order-table.js.map

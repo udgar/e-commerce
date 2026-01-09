@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7,7 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Product = void 0;
+const typeorm_1 = require("typeorm");
 let Product = class Product {
     id;
     productId;
@@ -15,29 +18,29 @@ let Product = class Product {
     price;
     category;
 };
+exports.Product = Product;
 __decorate([
-    PrimaryGeneratedColumn(),
+    (0, typeorm_1.PrimaryGeneratedColumn)(),
     __metadata("design:type", Number)
 ], Product.prototype, "id", void 0);
 __decorate([
-    Column({ name: 'product_id' }),
-    Column('uuid'),
+    (0, typeorm_1.Column)({ name: 'product_id' }),
+    (0, typeorm_1.Column)('uuid'),
     __metadata("design:type", String)
 ], Product.prototype, "productId", void 0);
 __decorate([
-    Column({ name: 'product_name' }),
+    (0, typeorm_1.Column)({ name: 'product_name' }),
     __metadata("design:type", String)
 ], Product.prototype, "productName", void 0);
 __decorate([
-    Column({ name: 'price' }),
+    (0, typeorm_1.Column)({ name: 'price' }),
     __metadata("design:type", Number)
 ], Product.prototype, "price", void 0);
 __decorate([
-    Column({ name: 'category' }),
+    (0, typeorm_1.Column)({ name: 'category' }),
     __metadata("design:type", String)
 ], Product.prototype, "category", void 0);
-Product = __decorate([
-    Entity("products_info")
+exports.Product = Product = __decorate([
+    (0, typeorm_1.Entity)("products_info")
 ], Product);
-export { Product };
 //# sourceMappingURL=product.entity.js.map

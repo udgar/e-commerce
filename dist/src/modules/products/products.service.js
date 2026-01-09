@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -10,10 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-import { Injectable } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
-import { Product } from './entities/product.entity.js';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ProductsService = void 0;
+const common_1 = require("@nestjs/common");
+const typeorm_1 = require("@nestjs/typeorm");
+const typeorm_2 = require("typeorm");
+const product_entity_js_1 = require("./entities/product.entity.js");
 let ProductsService = class ProductsService {
     repository;
     constructor(repository) {
@@ -35,10 +38,10 @@ let ProductsService = class ProductsService {
         return this.repository.delete({ id: parseInt(id) });
     }
 };
-ProductsService = __decorate([
-    Injectable(),
-    __param(0, InjectRepository(Product)),
-    __metadata("design:paramtypes", [Repository])
+exports.ProductsService = ProductsService;
+exports.ProductsService = ProductsService = __decorate([
+    (0, common_1.Injectable)(),
+    __param(0, (0, typeorm_1.InjectRepository)(product_entity_js_1.Product)),
+    __metadata("design:paramtypes", [typeorm_2.Repository])
 ], ProductsService);
-export { ProductsService };
 //# sourceMappingURL=products.service.js.map

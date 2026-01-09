@@ -1,4 +1,7 @@
-export class CreateRequiredTables1765889914245 {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CreateRequiredTables1765889914245 = void 0;
+class CreateRequiredTables1765889914245 {
     async up(queryRunner) {
         await queryRunner.query(`CREATE TABLE customer_data (
             id BIGSERIAL PRIMARY KEY,
@@ -18,4 +21,5 @@ export class CreateRequiredTables1765889914245 {
             await queryRunner.query(`DROP TABLE products_info`);
     }
 }
+exports.CreateRequiredTables1765889914245 = CreateRequiredTables1765889914245;
 //# sourceMappingURL=create-user-customer-tables.js.map
